@@ -17,7 +17,7 @@ async def changestatus():
 @client.event
 async def on_ready():
     print("*biep* *biep* *biep*")
-    print(":sattelite: Up and running :D")
+    print("ready and running")
     changestatus.start()
 
 @client.command()
