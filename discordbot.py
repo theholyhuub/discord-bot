@@ -8,7 +8,7 @@ import asyncio
 client = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 has_clearpermisions = commands.has_permissions(manage_messages=True)
 
-botstatus = cycle(["command activate = !", "join https://discord.gg/sg4Qwgun if you need help","or type !elp", "made by= theholyhuub"])
+botstatus = cycle(["command activate = !", "join https://discord.gg/sg4Qwgun if you need help","or type !hlp", "made by= theholyhuub"])
 
 @tasks.loop(seconds=5)
 async def changestatus():
