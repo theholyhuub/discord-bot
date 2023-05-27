@@ -73,4 +73,4 @@ async def kick(ctx, member: discord.Member, modreason):
 
 
 
-client.run("MTEwODgwMTIxNzcyOTEzODgwOA.GSe1jg.G7-g5Dp_TTgbhz4caxlJeUR0O6fQwJANp8nnos")
+client.run("put your own webhook here!")
