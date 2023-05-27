@@ -5,6 +5,7 @@ from itertools import cycle
 import os
 import asyncio
 
+
 client = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 has_clearpermisions = commands.has_permissions(manage_messages=True)
 
