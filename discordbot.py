@@ -3,13 +3,13 @@ from discord.ext import commands, tasks
 import random
 from itertools import cycle
 import os
-import asyncio
-
-
-client = commands.Bot(command_prefix="!", intents=discord.Intents.all())
+import asynciod.Intents.all())
 has_clearpermisions = commands.has_permissions(manage_messages=True)
 
-botstatus = cycle(["command activate = !", "join https://discord.gg/sg4Qwgun if you need help","or type !hlp", "made by= theholyhuub"])
+botstatus = cycle(["command activate = !", "join htt
+
+
+client = commands.Bot(command_prefix="!", intents=discorps://discord.gg/sg4Qwgun if you need help","or type !hlp", "made by= theholyhuub"])
 
 @tasks.loop(seconds=5)
 async def changestatus():
@@ -65,7 +65,7 @@ async def clear( ctx, count: int):
     await ctx.send(f"{count} message(s) deleted!")
 
 @client.command()
-async def kick(ctx, member: discord.Member, modreason):
+async def kick(ctx, member: discord.Member, *, modreason):
     await ctx.guild.kick(member)
     
     kick_embed = discord.Embed(title="Succes!", color=discord.Color.green())
@@ -74,5 +74,14 @@ async def kick(ctx, member: discord.Member, modreason):
 
     await ctx.send(embed=kick_embed) 
 
+@client.command()
+async def ban(ctx, member: discord.Member, *, modreason):
+    await ctx.guild.ban(member)
+
+    ban_embed = discord.Embed(title="Succes!", color=discord.Color.green())
+    ban_embed.add_field(name="banned: ", value=f"{member.mention} by {ctx.author.mention}.", inline=False)
+    ban_embed.add_field(name="reason: ", value=modreason, inline=False)
+
+    await ctx.send(embed=ban_embed)                       
 
 client.run("put your own webhook here!")
