@@ -3,14 +3,12 @@ from discord.ext import commands, tasks
 import random
 from itertools import cycle
 import os
-import asynciod.Intents.all())
-has_clearpermisions = commands.has_permissions(manage_messages=True)
+import asynciod
 
-botstatus = cycle(["command activate = !", "join htt
+client = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 
-
-client = commands.Bot(command_prefix="!", intents=discorps://discord.gg/sg4Qwgun if you need help","or type !hlp", "made by= theholyhuub"])
-
+botstatus = cycle(["command activate = !", "join https://discord.gg/sg4Qwgun if you need help","or type !hlp", "made by= theholyhuub"])
+            
 @tasks.loop(seconds=5)
 async def changestatus():
     await client.change_presence(activity=discord.Game(next(botstatus)))
