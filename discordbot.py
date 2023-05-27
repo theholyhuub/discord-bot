@@ -66,11 +66,12 @@ async def clear( ctx, count: int):
 @client.command()
 async def kick(ctx, member: discord.Member, modreason):
     await ctx.guild.kick(member)
+    
+    kick_embed = discord.Embed(title="Succes!", color=discord.Color.green())
+    kick_embed.add_field(name="kicked: ", value=f"{member.mention} by {ctx.author.mention}.", inline=False)
+    kick_embed.add_field(name="reason: ", value=modreason, inline=False)
 
-    conf_embed= discord.Embed(title="Succes!", color=discord.Color.green())
-    conf_embed.add_field(name="Kicked: ", value=f"{member.mention}has been kicked from the server by {ctx.author.mention}.", inline=False)
-
-
+    await ctx.send(embed=kick_embed) 
 
 
 client.run("put your own webhook here!")
