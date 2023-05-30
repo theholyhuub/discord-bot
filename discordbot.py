@@ -80,6 +80,15 @@ async def ban(ctx, member: discord.Member, *, modreason):
     ban_embed.add_field(name="banned: ", value=f"{member.mention} by {ctx.author.mention}.", inline=False)
     ban_embed.add_field(name="reason: ", value=modreason, inline=False)
 
-    await ctx.send(embed=ban_embed)                       
+    await ctx.send(embed=ban_embed)
+
+@client.command()
+async def shutdown(ctx):
+    shutdown_embed = discord.Embed(title="succes!", color=discord.Color.green())
+    shutdown_embed.add_field(name="shuttingdown the bot!", value=f"shutted down by {ctx.author.mention}.", inline=False)
+
+    await ctx.send(embed=shutdown_embed)
+    
+    await client.close()
 
 client.run("put your own webhook here!")
