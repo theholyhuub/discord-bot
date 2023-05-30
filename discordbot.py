@@ -82,6 +82,24 @@ async def ban(ctx, member: discord.Member, *, modreason):
 
     await ctx.send(embed=ban_embed)
 
+@client.command(aliases = ['userid', 'user id', 'uinfo', 'uid'])
+async def userinfo(ctx, member:discord.Member=None):
+    if member == None:
+        member = ctx.message.author
+    roles = [role for role in member.roles]
+    user_embed = discord.Embed(title="user info", description=f"here's the user info of {ctx.author.mention}.", color= discord.Color.green(), timestamp= ctx.message.created_at)
+    user_embed.set_thumbnail(url=member.avatar)
+    user_embed.add_field(name="ID", value= member.id)
+    user_embed.add_field(name="name", value= f"{member.name}#{member.discriminator}")
+    user_embed.add_field(name="nickname", value= member.display_name)
+    user_embed.add_field(name="status", value= member.status)
+    user_embed.add_field(name="acount created", value= member.created_at.strftime("%a, %B, %#d, %Y, %I:%M %p "))
+    user_embed.add_field(name="joined server", value= member.joined_at.strftime("%a, %B, %#d, %Y, %I:%M %p "))
+    user_embed.add_field(name="roles", value= roles)
+    user_embed.add_field(name="top role", value= member.top_role)
+
+    await ctx.send(embed=user_embed)
+
 @client.command()
 async def shutdown(ctx):
     shutdown_embed = discord.Embed(title="succes!", color=discord.Color.green())
